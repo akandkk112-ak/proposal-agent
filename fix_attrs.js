@@ -1,0 +1,10 @@
+const fs = require('fs');
+let content = fs.readFileSync('src/app/page.tsx', 'utf8');
+content = content.replace(/clip-rule=/g, 'clipRule=');
+content = content.replace(/fill-rule=/g, 'fillRule=');
+content = content.replace(/stroke-width=/g, 'strokeWidth=');
+content = content.replace(/stroke-linecap=/g, 'strokeLinecap=');
+content = content.replace(/stroke-linejoin=/g, 'strokeLinejoin=');
+content = content.replace(/onsubmit="event.preventDefault\(\);"/g, 'onSubmit={(e) => e.preventDefault()}');
+fs.writeFileSync('src/app/page.tsx', content);
+console.log('Fixed React attribute errors!');

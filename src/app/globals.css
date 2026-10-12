@@ -1,0 +1,261 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, monospace;
+
+  /* Brand Colors - Executive Studio Slate */
+  --color-brand: #7C3AED;
+  --color-brand-hover: #6D28D9;
+  --color-brand-light: #DDD6FE;
+  --color-brand-muted: #EDE9FE;
+
+  /* Neutrals */
+  --color-canvas: #F8FAFC;
+  --color-surface: #FFFFFF;
+  --color-border: #E5E7EB;
+  --color-border-strong: #D1D5DB;
+  --color-text-primary: #111827;
+  --color-text-secondary: #6B7280;
+  --color-text-tertiary: #9CA3AF;
+  --color-slate-50: #F8FAFC;
+  --color-slate-100: #F1F5F9;
+  --color-slate-200: #E2E8F0;
+  --color-slate-400: #94A3B8;
+  --color-slate-500: #64748B;
+  --color-slate-600: #475569;
+  --color-slate-700: #334155;
+  --color-slate-800: #1E293B;
+  --color-slate-900: #0F172A;
+
+  /* Status */
+  --color-success: #059669;
+  --color-success-bg: #ECFDF5;
+  --color-success-text: #047857;
+  --color-warning: #D97706;
+  --color-warning-bg: #FEF3C7;
+  --color-warning-text: #B45309;
+  --color-error: #DC2626;
+  --color-error-bg: #FEF2F2;
+  --color-error-text: #991B1B;
+  --color-info: #2563EB;
+  --color-info-bg: #EFF6FF;
+  --color-info-text: #1D4ED8;
+
+  /* Radii */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-full: 9999px;
+
+  /* shadcn compat */
+  --color-background: #F8FAFC;
+  --color-foreground: #111827;
+  --color-card: #FFFFFF;
+  --color-card-foreground: #111827;
+  --color-popover: #FFFFFF;
+  --color-popover-foreground: #111827;
+  --color-primary: #7C3AED;
+  --color-primary-foreground: #FFFFFF;
+  --color-secondary: #475569;
+  --color-secondary-foreground: #FFFFFF;
+  --color-muted: #F1F5F9;
+  --color-muted-foreground: #6B7280;
+  --color-accent: #F1F5F9;
+  --color-accent-foreground: #111827;
+  --color-destructive: #DC2626;
+  --color-destructive-foreground: #FFFFFF;
+  --color-input: #E5E7EB;
+  --color-ring: #7C3AED;
+  --color-sidebar: #F8FAFC;
+  --color-sidebar-foreground: #111827;
+  --color-sidebar-primary: #7C3AED;
+  --color-sidebar-primary-foreground: #FFFFFF;
+  --color-sidebar-accent: #F1F5F9;
+  --color-sidebar-accent-foreground: #111827;
+  --color-sidebar-border: #E5E7EB;
+  --color-sidebar-ring: #7C3AED;
+  --color-chart-1: #7C3AED;
+  --color-chart-2: #059669;
+  --color-chart-3: #D97706;
+  --color-chart-4: #2563EB;
+  --color-chart-5: #DC2626;
+  --radius: 0.5rem;
+}
+
+:root {
+  --background: #F8FAFC;
+  --foreground: #111827;
+  --card: #FFFFFF;
+  --card-foreground: #111827;
+  --popover: #FFFFFF;
+  --popover-foreground: #111827;
+  --primary: #7C3AED;
+  --primary-foreground: #FFFFFF;
+  --secondary: #475569;
+  --secondary-foreground: #FFFFFF;
+  --muted: #F1F5F9;
+  --muted-foreground: #6B7280;
+  --accent: #F1F5F9;
+  --accent-foreground: #111827;
+  --destructive: #DC2626;
+  --destructive-foreground: #FFFFFF;
+  --border: #E5E7EB;
+  --input: #E5E7EB;
+  --ring: #7C3AED;
+  --radius: 0.5rem;
+  --sidebar: #F8FAFC;
+  --sidebar-foreground: #111827;
+  --sidebar-primary: #7C3AED;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #F1F5F9;
+  --sidebar-accent-foreground: #111827;
+  --sidebar-border: #E5E7EB;
+  --sidebar-ring: #7C3AED;
+  --chart-1: #7C3AED;
+  --chart-2: #059669;
+  --chart-3: #D97706;
+  --chart-4: #2563EB;
+  --chart-5: #DC2626;
+}
+
+@layer base {
+  * {
+    @apply border-[#E5E7EB] outline-[#7C3AED]/50;
+    box-sizing: border-box;
+  }
+
+  body {
+    background: #F8FAFC;
+    color: #111827;
+    font-family: var(--font-sans);
+    font-feature-settings: "tnum", "kern";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Typography scale */
+  .text-display-lg {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 48px;
+    letter-spacing: -0.025em;
+  }
+  .text-headline-xl {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: -0.02em;
+  }
+  .text-headline-lg {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 32px;
+    letter-spacing: -0.015em;
+  }
+  .text-headline-md {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 28px;
+    letter-spacing: -0.01em;
+  }
+  .text-headline-sm {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: -0.005em;
+  }
+  .text-body-lg {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+  }
+  .text-body-md {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+  }
+  .text-body-sm {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0.005em;
+  }
+  .text-label-md {
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: 0.01em;
+  }
+  .text-label-sm {
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 16px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  /* Input focus styles */
+  input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: #7C3AED;
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.12);
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #D1D5DB;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9CA3AF;
+}
+
+/* Proposal card hover */
+.proposal-block:hover {
+  border-color: #C4B5FD;
+}
+.proposal-block.active {
+  border-left: 2px solid #7C3AED;
+}
+
+/* Status badge */
+.badge-draft { background: #F1F5F9; color: #475569; }
+.badge-review { background: #FEF3C7; color: #B45309; }
+.badge-signed { background: #ECFDF5; color: #047857; }
+.badge-sent { background: #EFF6FF; color: #1D4ED8; }
+.badge-declined { background: #FEF2F2; color: #991B1B; }
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeIn {
+  animation: fadeIn 0.25s ease-out;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-8px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+.animate-slideIn {
+  animation: slideIn 0.2s ease-out;
+}
+
+/* Chart tooltip override */
+.recharts-tooltip-wrapper {
+  z-index: 1000;
+}
